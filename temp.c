@@ -12,6 +12,7 @@ int main(int argc,char *argv[])
 {
     char *ret, *s1;
     char holdval[10],serialDir[50],serialNum[50];
+    char lowestStr[50], highestStr[50], currentStr[50];
     int len,newTemp,oldTemp,absTemp,highestTemp,lowestTemp;
     FILE *fp;
     char path[PATH_MAX];
@@ -65,7 +66,10 @@ int main(int argc,char *argv[])
             		{
             			lowestTemp = newTemp;
             		}
-            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestTemp, newTemp, lowestTemp);
+            	sprintf(lowestStr,"%d" ,lowestTemp);
+            	sprintf(currentStr,"%d" ,newTemp);
+            	sprintf(highestStr,"%d" ,highestTemp);
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);
             }
         if((newTemp > 0 && oldTemp < 0))
             {
@@ -79,8 +83,10 @@ int main(int argc,char *argv[])
                             {
                                     lowestTemp = newTemp;
                             }
-            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestTemp, newTemp, lowestTemp);
-            }
+                sprintf(lowestStr,"%d" ,lowestTemp);
+            	sprintf(currentStr,"%d" ,newTemp);
+            	sprintf(highestStr,"%d" ,highestTemp);
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);           
         if(oldTemp > 0 && newTemp > 0)
             {
             	absTemp = abs(oldTemp - newTemp);
@@ -96,8 +102,10 @@ int main(int argc,char *argv[])
                             {
                                     lowestTemp = newTemp;
                             }
-            		ifttt("https://maker.ifttt.com/trigger/AlarmTriggerd3/with/key/uQayuY3amwBonQr7RGtpk", "Temp", "is", "changing");
-            	}
+                sprintf(lowestStr,"%d" ,lowestTemp);
+            	sprintf(currentStr,"%d" ,newTemp);
+            	sprintf(highestStr,"%d" ,highestTemp);
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);            	
             }
         else
             {
@@ -114,13 +122,16 @@ int main(int argc,char *argv[])
                             {
                                     lowestTemp = newTemp;
                             }
-            			ifttt("https://maker.ifttt.com/trigger/AlarmTriggerd3/with/key/uQayuY3amwBonQr7RGtpk", "Temp", "is", "changing");
-                    }
+                sprintf(lowestStr,"%d" ,lowestTemp);
+            	sprintf(currentStr,"%d" ,newTemp);
+            	sprintf(highestStr,"%d" ,highestTemp);
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);                    
             }
     }
 
 return 0;
 }
+
 
 
 
