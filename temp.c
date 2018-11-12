@@ -87,7 +87,8 @@ int main(int argc,char *argv[])
             	sprintf(currentStr,"%d" ,newTemp);
             	sprintf(highestStr,"%d" ,highestTemp);
             	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);           
-        if(oldTemp > 0 && newTemp > 0)
+	}        
+		if(oldTemp > 0 && newTemp > 0)
             {
             	absTemp = abs(oldTemp - newTemp);
             	printf("both of them are positive\n");
@@ -131,7 +132,6 @@ int main(int argc,char *argv[])
 
 return 0;
 }
-	}
 
 
 
