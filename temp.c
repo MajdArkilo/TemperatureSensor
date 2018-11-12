@@ -87,7 +87,7 @@ int main(int argc,char *argv[])
             	sprintf(currentStr,"%d" ,newTemp);
             	sprintf(highestStr,"%d" ,highestTemp);
             	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);           
-	}        
+        	}        
 		if(oldTemp > 0 && newTemp > 0)
             {
             	absTemp = abs(oldTemp - newTemp);
@@ -106,7 +106,8 @@ int main(int argc,char *argv[])
                 sprintf(lowestStr,"%d" ,lowestTemp);
             	sprintf(currentStr,"%d" ,newTemp);
             	sprintf(highestStr,"%d" ,highestTemp);
-            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);            	
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);   
+            	}
             }
         else
             {
@@ -126,14 +127,10 @@ int main(int argc,char *argv[])
                 sprintf(lowestStr,"%d" ,lowestTemp);
             	sprintf(currentStr,"%d" ,newTemp);
             	sprintf(highestStr,"%d" ,highestTemp);
-            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);                    
+            	ifttt("https://maker.ifttt.com/trigger/TempChange/with/key/uQayuY3amwBonQr7RGtpk", highestStr, currentStr, lowestStr);     
+                    }
             }
     }
 
 return 0;
 }
-
-
-
-
-
